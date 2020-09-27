@@ -1,0 +1,45 @@
+package com.saanvi.mongo.config;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.kafka.clients.producer.ProducerConfig;
+import org.apache.kafka.common.serialization.StringSerializer;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
+import org.springframework.kafka.core.ConsumerFactory;
+import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
+import org.springframework.kafka.core.DefaultKafkaProducerFactory;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.core.ProducerFactory;
+import org.springframework.kafka.support.serializer.JsonSerializer;
+
+import com.saanvi.mongo.vo.Student;
+
+@Configuration
+public class KafkaConfigurator {
+
+
+	@Bean	
+	public ConsumerFactory<String, Student> getConsumerfactory()
+	{
+		
+		Map<String, Object> datamap =new HashMap<String, Object>();
+		datamap.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
+		datamap.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+		datamap.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
+		return new DefaultKafkaConsumerFactory<String, Student>(datamap);
+	}
+	
+	@Bean
+	public ConcurrentKafkaListenerContainerFactory<String, Student> kafkaconsumer()
+	{
+		
+		ConcurrentKafkaListenerContainerFactory listenerfactory = new
+				ConcurrentKafkaListenerContainerFactory();
+		listenerfactory.setConsumerFactory(getConsumerfactory());
+		
+		return listenerfactory;
+	}
+}

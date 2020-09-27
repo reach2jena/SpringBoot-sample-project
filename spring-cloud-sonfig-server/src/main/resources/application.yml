@@ -1,0 +1,18 @@
+server:
+  port: 8588
+ 
+
+
+spring:
+  cloud:
+    config:
+      server:
+        bootstrap: false
+  application:
+    name: cloud config server
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8586/eureka
+ 

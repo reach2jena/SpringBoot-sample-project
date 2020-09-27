@@ -1,0 +1,21 @@
+package com.example.demo.configuration;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.core.DefaultKafkaProducerFactory;
+import org.springframework.kafka.core.ProducerFactory;
+
+@Configuration
+public class KafkaConfiguration {
+
+
+	public ProducerFactory getProducerfactory()
+	{
+		
+		Map<String, String> datamap =new HashMap<String, String>();
+		datamap.compute(arg0, arg1)
+		return new DefaultKafkaProducerFactory<K, V>(configs)
+	}
+}

@@ -1,0 +1,5 @@
+package com.saanvi.mongo.controller;
+
+public class KafkaConsumerService {
+
+}

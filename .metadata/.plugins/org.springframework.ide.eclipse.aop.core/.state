@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="demo-kafka-consumer"/>
+<aop-project name="master-catalog-service"/>
+<aop-project name="demo-kafka"/>
+<aop-project name="Docker-MongoDB-connector"/>
+<aop-project name="master-ratings-service"/>
+<aop-project name="spring-security-auth"/>
+<aop-project name="demo-kafka-publisher"/>
+<aop-project name="spring-cloud-sonfig-server"/>
+<aop-project name="eureka-client"/>
+<aop-project name="master-movies-service"/>
+<aop-project name="eureka-service"/>
+<aop-project name="app-demo"/>
+</aop-reference-model>

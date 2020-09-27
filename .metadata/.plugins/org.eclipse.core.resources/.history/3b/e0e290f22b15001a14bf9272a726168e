@@ -1,0 +1,6 @@
+FROM openjdk:8
+
+ADD  target\mongo-connector.jar mongoconnector.jar
+
+ENTRYPOINT["java" ,"-jar" ,"mongoconnector.jar"]
+EXPOSE:8083

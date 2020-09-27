@@ -1,0 +1,4 @@
+server.port=8083
+management.endpoints.enabled-by-default=false
+management.endpoint.info.enabled=true
+management.endpoints.web.exposure.include = info,health

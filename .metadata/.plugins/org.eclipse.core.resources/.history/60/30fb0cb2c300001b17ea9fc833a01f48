@@ -1,0 +1,4 @@
+server:
+  port: 8586
+  servlet:
+    context-path: /eureka
